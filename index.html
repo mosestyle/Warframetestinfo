@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Relic Reward Sorter</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="wrap">
+    <h1>Relic Reward Sorter</h1>
+    <p class="muted">Pick 4 relics • see all possible rewards • sort by plat value.</p>
+  </header>
+
+  <main class="wrap card">
+    <section class="grid">
+      <div class="field">
+        <label>Relic 1</label>
+        <button class="pickerBtn" data-target="r1" type="button">
+          <span id="r1Text" class="pickerPlaceholder">Tap to choose (Lith/Meso/Neo/Axi)</span>
+          <span class="chev">▾</span>
+        </button>
+      </div>
+
+      <div class="field">
+        <label>Relic 2</label>
+        <button class="pickerBtn" data-target="r2" type="button">
+          <span id="r2Text" class="pickerPlaceholder">Tap to choose</span>
+          <span class="chev">▾</span>
+        </button>
+      </div>
+
+      <div class="field">
+        <label>Relic 3</label>
+        <button class="pickerBtn" data-target="r3" type="button">
+          <span id="r3Text" class="pickerPlaceholder">Tap to choose</span>
+          <span class="chev">▾</span>
+        </button>
+      </div>
+
+      <div class="field">
+        <label>Relic 4</label>
+        <button class="pickerBtn" data-target="r4" type="button">
+          <span id="r4Text" class="pickerPlaceholder">Tap to choose</span>
+          <span class="chev">▾</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="actions">
+      <button id="btnShow" type="button">Show rewards</button>
+      <button id="btnClear" class="ghost" type="button">Clear</button>
+      <div class="status" id="status"></div>
+    </section>
+
+    <!-- Results (cards for mobile) -->
+    <section class="results">
+      <div id="cards"></div>
+    </section>
+
+    <footer class="muted small" id="footer"></footer>
+  </main>
+
+  <!-- Fullscreen Relic Picker -->
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modalTop">
+      <button id="modalClose" class="modalClose" type="button">✕</button>
+      <div class="modalTitle" id="modalTitle">Choose relic</div>
+    </div>
+
+    <div class="modalSearch">
+      <input id="modalSearch" type="text" placeholder="Search: e.g. Meso C1 / Neo N16 / Axi S18" />
+    </div>
+
+    <div id="modalList" class="modalList"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
